@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "fluxtracker",
+  "version": "${version}",
+  "name": "FluxTracker",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/fluxtracker/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "me.quickscythe.fluxtracker.Initializer"
+    ]
+  },
+  "mixins": [
+    "fluxtracker.mixins.json",
+    {
+      "config": "fluxtracker.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
