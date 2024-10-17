@@ -90,7 +90,7 @@ jar {
 // configure the maven publication
 publishing {
     publications {
-        create("mavenJava", MavenPublication) {
+        create("maven", MavenPublication) {
             artifactId = project.archives_base_name
             from components.java
         }
