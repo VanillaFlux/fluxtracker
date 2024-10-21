@@ -3,7 +3,7 @@ package me.quickscythe.fluxtracker.commands;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import me.quickscythe.fluxcore.utils.NamedTextColor;
-import me.quickscythe.fluxcore.utils.data.StorageManager;
+import me.quickscythe.fluxcore.api.data.StorageManager;
 import me.quickscythe.fluxtracker.utils.data.event.Event;
 import me.quickscythe.fluxtracker.utils.data.event.EventManager;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;

@@ -2,8 +2,8 @@ package me.quickscythe.fluxtracker.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
 import me.quickscythe.fluxcore.utils.UID;
-import me.quickscythe.fluxcore.utils.sql.SqlDatabase;
-import me.quickscythe.fluxcore.utils.sql.SqlUtils;
+import me.quickscythe.fluxcore.api.sql.SqlDatabase;
+import me.quickscythe.fluxcore.api.sql.SqlUtils;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.server.command.CommandManager;

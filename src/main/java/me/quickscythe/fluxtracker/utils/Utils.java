@@ -1,23 +1,24 @@
 package me.quickscythe.fluxtracker.utils;
 
+import me.quickscythe.fluxcore.api.FluxEntrypoint;
 import me.quickscythe.fluxcore.utils.CoreUtils;
-import me.quickscythe.fluxcore.utils.data.StorageManager;
-import me.quickscythe.fluxtracker.Initializer;
+import me.quickscythe.fluxcore.api.data.StorageManager;
 import me.quickscythe.fluxtracker.utils.data.event.EventManager;
+import me.quickscythe.fluxcore.FluxInitializer;
 
 public class Utils {
-   private static Initializer mod;
+   private static FluxEntrypoint entrypoint;
 
 
 
-    public static boolean init(Initializer mod) {
+    public static boolean init(FluxEntrypoint entrypoint) {
         try {
-            Utils.mod = mod;
+            Utils.entrypoint = entrypoint;
 
             StorageManager.registerDataManager(new EventManager());
 
         } catch (Exception e) {
-            CoreUtils.getLoggerUtils().log("Error initializing " + mod.NAME + ": " + e.getMessage());
+            CoreUtils.getLoggerUtils().log("Error initializing " + entrypoint.getMod().getName() + ": " + e.getMessage());
             throw new RuntimeException(e);
 //            return false;
         }
@@ -27,8 +28,8 @@ public class Utils {
 
 
 
-    public static Initializer getInitializer() {
-        return mod;
+    public static FluxEntrypoint getEntrypoint() {
+        return entrypoint;
     }
 
 

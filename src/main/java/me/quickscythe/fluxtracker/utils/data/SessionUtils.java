@@ -1,10 +1,10 @@
 package me.quickscythe.fluxtracker.utils.data;
 
-import json2.JSONArray;
-import json2.JSONObject;
-import me.quickscythe.fluxcore.utils.data.AccountManager;
-import me.quickscythe.fluxcore.utils.data.StorageManager;
-import me.quickscythe.fluxcore.utils.sql.SqlUtils;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import me.quickscythe.fluxcore.api.data.AccountManager;
+import me.quickscythe.fluxcore.api.data.StorageManager;
+import me.quickscythe.fluxcore.api.sql.SqlUtils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;

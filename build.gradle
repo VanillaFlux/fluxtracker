@@ -1,3 +1,7 @@
+import org.objectweb.asm.*
+
+import java.nio.file.Files
+
 plugins {
     id 'fabric-loom' version '1.8-SNAPSHOT'
     id 'maven-publish'
@@ -43,6 +47,8 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     compileOnly "de.bluecolored.bluemap:BlueMapAPI:${project.bluemap_api_version}"
     modImplementation "me.quickscythe:fluxcore:${fluxcore_version}"
+
+    implementation "org.ow2.asm:asm:$asm_version"
 }
 
 processResources {
@@ -57,6 +63,8 @@ processResources {
                 "loader_version": project.loader_version
     }
 }
+
+
 
 def targetJavaVersion = 21
 tasks.withType(JavaCompile).configureEach {

@@ -1,11 +1,11 @@
 package me.quickscythe.fluxtracker.utils.data.event;
 
-import json2.JSONArray;
-import json2.JSONObject;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import me.quickscythe.fluxcore.utils.ApiManager;
 import me.quickscythe.fluxcore.utils.CoreUtils;
-import me.quickscythe.fluxcore.utils.data.AccountManager;
-import me.quickscythe.fluxcore.utils.data.StorageManager;
+import me.quickscythe.fluxcore.api.data.AccountManager;
+import me.quickscythe.fluxcore.api.data.StorageManager;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -13,6 +13,7 @@ import net.minecraft.text.TextColor;
 
 import java.awt.*;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -43,9 +44,13 @@ public class Event {
     }
 
     public void reload() {
-        StorageManager.getStorage().load("eventdata." + name);
-        if (StorageManager.getStorage().get("eventdata." + name) != null) {
-            JSONObject json = StorageManager.getStorage().getJsonObject("eventdata." + name);
+        try{
+            StorageManager.getStorage().load("eventdata." + name);
+        } catch (Exception ignore){
+            //File hasn't been created yet. No problem, we'll create it later.
+        }
+        if (StorageManager.getStorage().get("fluxdata.eventdata." + name) != null) {
+            JSONObject json = StorageManager.getStorage().getJsonObject("fluxdata.eventdata." + name);
             this.status = Status.valueOf(json.getString("status"));
             JSONArray players = json.getJSONArray("players");
             for (int i = 0; i < players.length(); i++) {

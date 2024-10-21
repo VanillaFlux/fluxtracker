@@ -1,8 +1,8 @@
 package me.quickscythe.fluxtracker.utils.data.event;
 
 import me.quickscythe.fluxcore.utils.CoreUtils;
-import me.quickscythe.fluxcore.utils.data.StorageManager;
-import me.quickscythe.fluxcore.utils.data.api.DataManager;
+import me.quickscythe.fluxcore.api.data.StorageManager;
+import me.quickscythe.fluxcore.api.data.DataManager;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 

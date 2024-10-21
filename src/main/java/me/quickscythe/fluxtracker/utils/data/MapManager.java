@@ -7,12 +7,12 @@ import de.bluecolored.bluemap.api.gson.MarkerGson;
 import de.bluecolored.bluemap.api.markers.MarkerSet;
 import de.bluecolored.bluemap.api.markers.POIMarker;
 import de.bluecolored.bluemap.api.plugin.SkinProvider;
-import json2.JSONObject;
+import org.json.JSONObject;
 import me.quickscythe.fluxcore.utils.CoreUtils;
 import me.quickscythe.fluxcore.utils.ImageUtils;
-import me.quickscythe.fluxcore.utils.data.StorageManager;
-import me.quickscythe.fluxcore.utils.data.api.DataManager;
-import me.quickscythe.fluxcore.utils.logger.LoggerUtils;
+import me.quickscythe.fluxcore.api.data.StorageManager;
+import me.quickscythe.fluxcore.api.data.DataManager;
+import me.quickscythe.fluxcore.api.logger.LoggerUtils;
 import net.minecraft.server.network.ServerPlayerEntity;
 
 import javax.imageio.ImageIO;
